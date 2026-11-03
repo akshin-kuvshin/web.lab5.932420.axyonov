@@ -5,16 +5,76 @@
     --color-text: #3b2416;
     --color-surface: #fffaf3;
     --color-header: #9a3f00;
+    --color-header-text: white;
     --color-footer: #3b2416;
+    --color-footer-text: white;
     --color-border: #c99a70;
     --color-progress-track: #3b2416;
     --color-progress-fill: #ffb15c;
+    --color-button-text: white;
+    --color-focus: #ffb15c;
+
+    --color-nav-bg: #3b2416;
+    --color-nav-text: white;
+    --color-nav-visited: #f1d8bd;
+    --color-nav-hover: #ffb15c;
+    --color-nav-hover-bg: #4b2c1a;
+
+    --color-aside: #f8c58a;
+    --color-badge-text: white;
+
+    --color-card: white;
+    --color-stat-card: #f8eadb;
+
+    --color-input-bg: white;
 
     --color-delete: #a94343;
+    --color-delete-text: white;
     --color-delete-hover: #853535;
+
+    --color-shadow: rgba(59, 36, 22, 0.18);
+    --color-input-focus: rgba(154, 63, 0, 0.25);
 
     --font-main: sans-serif;
     --font-heading: Georgia, "Times New Roman", serif;
+}
+
+body.dark-theme {
+    --color-primary: #202124;
+    --color-accent: #d69b65;
+    --color-accent-dark: #b77c4d;
+    --color-text: #e8eaed;
+    --color-surface: #303134;
+    --color-header: #303134;
+    --color-header-text: #f5f5f5;
+    --color-footer: #171819;
+    --color-footer-text: #e8eaed;
+    --color-border: #55565a;
+    --color-progress-track: #55565a;
+    --color-progress-fill: #d69b65;
+    --color-button-text: #202124;
+    --color-focus: #ffbd80;
+
+    --color-nav-bg: #292a2d;
+    --color-nav-text: #e0d5ca;
+    --color-nav-visited: #b89b82;
+    --color-nav-hover: #f0b77e;
+    --color-nav-hover-bg: #292522;
+
+    --color-aside: #4a3b30;
+    --color-badge-text: #ffffff;
+
+    --color-card: #292a2d;
+    --color-stat-card: #302a26;
+
+    --color-input-bg: #252629;
+
+    --color-delete: #a94343;
+    --color-delete-text: #ffffff;
+    --color-delete-hover: #853535;
+
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-input-focus: rgba(214, 155, 101, 0.3);
 }
 
 * {
@@ -71,9 +131,9 @@ section {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: var(--color-text);
+    background-color: var(--color-nav-bg);
     border-bottom: 3px solid var(--color-accent);
-    box-shadow: 0 2px 8px rgba(59, 36, 22, 0.18);
+    box-shadow: 0 2px 8px var(--color-shadow);
 }
 
 .site-nav ul {
@@ -93,37 +153,37 @@ section {
 .site-nav a {
     display: block;
     padding: 12px 16px;
-    color: white;
+    color: var(--color-nav-text);
     text-decoration: none;
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .site-nav a:visited {
-    color: #f1d8bd;
+    color: var(--color-nav-visited);
 }
 
 .site-nav a:hover {
-    color: #ffb15c;
-    background-color: #4b2c1a;
+    color: var(--color-nav-hover);
+    background-color: var(--color-nav-hover-bg);
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
 }
 
 .site-nav a:active {
-    color: white;
+    color: var(--color-nav-text);
     background-color: var(--color-accent-dark);
 }
 
 .site-nav a:focus {
-    outline: 3px solid #ffb15c;
+    outline: 3px solid var(--color-focus);
     outline-offset: -3px;
 }
 
 header {
     padding: 32px;
     background-color: var(--color-header);
-    color: white;
+    color: var(--color-header-text);
 }
 
 header p {
@@ -152,7 +212,7 @@ section h2 {
     border: 4px solid var(--color-surface);
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 4px 14px rgba(59, 36, 22, 0.18);
+    box-shadow: 0 4px 14px var(--color-shadow);
 }
 
 .about-media aside {
@@ -162,7 +222,7 @@ section h2 {
     width: calc(100% - 324px);
     font-size: 16px;
     padding: 48px 28px 28px;
-    background-color: #f8c58a;
+    background-color: var(--color-aside);
     border: 1px solid var(--color-border);
     border-radius: 10px;
 }
@@ -173,7 +233,7 @@ section h2 {
     right: 14px;
     padding: 2px 8px;
     background-color: var(--color-accent-dark);
-    color: white;
+    color: var(--color-badge-text);
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: bold;
@@ -193,10 +253,10 @@ section h2 {
     flex-direction: column; /* content in cards is located from up to down */
     min-width: 0;
     padding: 20px;
-    background: white;
+    background: var(--color-card);
     border: 1px solid var(--color-border);
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(59, 36, 22, .08);
+    box-shadow: 0 3px 10px var(--color-shadow);
 }
 
 .skill-card h3 {
@@ -247,7 +307,7 @@ section h2 {
     min-width: 0;
     padding: 24px 16px;
     text-align: center;
-    background: #f8eadb;
+    background: var(--color-stat-card);
     border: 1px solid var(--color-border);
     border-radius: 10px;
 }
@@ -281,7 +341,7 @@ form textarea {
     padding: 10px 12px;
     border: 2px solid var(--color-border);
     border-radius: 6px;
-    background-color: white;
+    background-color: var(--color-input-bg);
     color: var(--color-text);
     font: inherit;
 }
@@ -289,7 +349,7 @@ form textarea {
 form input:focus,
 form textarea:focus {
     border-color: var(--color-accent);
-    outline: 3px solid rgba(154, 63, 0, 0.25);
+    outline: 3px solid var(--color-input-focus);
     outline-offset: 1px;
 }
 
@@ -298,7 +358,7 @@ form button {
     border: 2px solid var(--color-accent-dark);
     border-radius: 6px;
     background-color: var(--color-accent);
-    color: white;
+    color: var(--color-button-text);
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
@@ -311,7 +371,7 @@ form button:active {
 }
 
 form button:focus {
-    outline: 3px solid #ffb15c;
+    outline: 3px solid var(--color-focus);
     outline-offset: 3px;
 }
 
@@ -319,7 +379,7 @@ footer {
     margin-top: 48px;
     padding: 24px;
     background-color: var(--color-footer);
-    color: white;
+    color: var(--color-footer-text);
 }
 
 footer p {
@@ -503,7 +563,7 @@ body.dark-theme #theme-toggler #theme-toggler-icon-dark {
 
 .editable-skills-controls button {
     background-color: var(--color-accent);
-    color: white;
+    color: var(--color-button-text);
 }
 
 .editable-skills-controls button:hover {
@@ -529,7 +589,7 @@ body.dark-theme #theme-toggler #theme-toggler-icon-dark {
     margin-left: 12px;
     padding: 5px 9px;
     background-color: var(--color-delete);
-    color: white;
+    color: var(--color-footer-text);
 }
 
 .editable-skills-list-item-delete:hover {

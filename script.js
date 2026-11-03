@@ -72,6 +72,24 @@ function main() {
 
     if (totalDistance > bigTotalDistanceCriteria)
         console.log("Рекомендуется разбить маршрут на 2-3 дня.");
+
+
+
+
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark')
+        document.body.classList.add('dark-theme');
+
+    const themeToggler = document.getElementById('theme-toggler');
+    if (themeToggler)
+        themeToggler.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDarkTheme = document.body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+        });
+    else
+        console.error("Элемент #theme-toggler не найден.");
 }
 
 main()
