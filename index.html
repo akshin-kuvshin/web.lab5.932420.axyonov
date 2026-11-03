@@ -43,10 +43,20 @@
         <ul>
             <li><a href="#about">Обо мне</a></li>
             <li><a href="#skills">Навыки</a></li>
+            <li><a href="#editable-skills">Редактируемые навыки</a></li>
             <li><a href="#visited">Посещённые вершины</a></li>
             <li><a href="#statistics">Статистика</a></li>
             <li><a href="#feedback">Обратная связь</a></li>
         </ul>
+
+        <button id="theme-toggler">
+            <img id="theme-toggler-icon-light"
+                 src="./img/theme-toggle-light.png"
+                 alt="Переключить тему">
+            <img id="theme-toggler-icon-dark"
+                 src="./img/theme-toggle-dark.png"
+                 alt="Переключить тему">
+        </button>
     </nav>
 
     <main>
@@ -111,6 +121,18 @@
                     <div class="progress-track" role="progressbar" aria-label="Уровень знания английского языка" aria-valuemin="0" aria-valuemax="100" aria-valuenow="67"><div class="progress-fill" style="width: 67%"></div></div>
                 </article>
             </div>
+        </section>
+
+        <section id="editable-skills">
+            <h2>Редактируемые навыки</h2>
+
+            <div class="editable-skills-controls">
+                <button id="add-editable-skill">Добавить навык</button>
+                <button id="clear-editable-skills">Очистить список навыков</button>
+                <button id="toggle-editable-skills">Скрыть список навыков</button>
+            </div>
+
+            <ul id="editable-skills-list"></ul>
         </section>
 
         <section id="visited">

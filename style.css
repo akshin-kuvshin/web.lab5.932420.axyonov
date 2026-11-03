@@ -9,6 +9,10 @@
     --color-border: #c99a70;
     --color-progress-track: #3b2416;
     --color-progress-fill: #ffb15c;
+
+    --color-delete: #a94343;
+    --color-delete-hover: #853535;
+
     --font-main: sans-serif;
     --font-heading: Georgia, "Times New Roman", serif;
 }
@@ -410,4 +414,128 @@ footer p {
     footer {
         margin-top: 28px;
     }
+}
+
+#theme-toggler {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+
+    cursor: pointer;
+    appearance: none;
+}
+
+#theme-toggler img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#theme-toggler:hover img {
+    transform: scale(1.15) rotate(15deg);
+}
+
+#theme-toggler:active img {
+    transform: scale(0.9);
+}
+
+#theme-toggler #theme-toggler-icon-dark {
+    display: none;
+}
+
+body.dark-theme #theme-toggler #theme-toggler-icon-light {
+    display: none;
+}
+
+body.dark-theme #theme-toggler #theme-toggler-icon-dark {
+    display: block;
+}
+
+.editable-skills {
+    margin: 32px 0;
+    padding: 24px;
+    border-radius: 10px;
+}
+
+.editable-skills h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.editable-skills-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.editable-skills-controls button,
+.editable-skills-list-item-delete {
+    padding: 8px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    font: inherit;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.editable-skills-controls button {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+.editable-skills-controls button:hover {
+    opacity: 0.8;
+}
+
+#editable-skills-list {
+    padding-left: 24px;
+    margin: 0;
+}
+
+.editable-skills-list-item {
+    margin-bottom: 12px;
+    padding: 10px;
+
+    /* background-color: var(--color-primary); */
+    border-radius: 6px;
+
+    overflow-wrap: anywhere;
+}
+
+.editable-skills-list-item-delete {
+    margin-left: 12px;
+    padding: 5px 9px;
+    background-color: var(--color-delete);
+    color: white;
+}
+
+.editable-skills-list-item-delete:hover {
+    background-color: var(--color-delete-hover);
+}
+
+.invisible {
+    display: none;
 }
