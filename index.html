@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вариант 2 | Путешественник</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+
+    <style>
+        .projects {
+            column-count: 2;
+            column-gap: 32px;
+        }
+
+        .projects li {
+            margin: 0 0 16px;
+            padding: 10px;
+            background-color: #f8eadb;
+            border-left: 4px solid var(--color-accent);
+            border-radius: 6px;
+        }
+
+        /* adaptive layout for mobiles */
+        @media (max-width: 600px) {
+            .projects {
+                column-count: 1; /* 1 column for mobiles */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Данила Аксёнов, гр. 932420</h1>
+        <p>Путешественник</p>
+    </header>
+
+    <!-- page content (navigation links) -->
+    <nav class="site-nav" aria-label="Навигация по странице">
+        <ul>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#visited">Посещённые вершины</a></li>
+            <li><a href="#statistics">Статистика</a></li>
+            <li><a href="#feedback">Обратная связь</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>Обо мне</h2>
+
+            <p>Я люблю путешествовать (клишейно))).</p>
+            <p>Моим идейным вдохновителем является мой дядя, который в 30+ лет загорелся идеей альпинизма, нашёл единомышленников и буквально год назад взошёл на Эльбрус!</p>
+            <p>Мой же путь, как путешественника, начался в старшей школе - с двух поездок в МДЦ "Артек" с интервалом в 1 год. Символично, но оба раза я попадал в профильный туристический отряд (сначала по распределению, потом - по велению сердца).<br>Аю-Даг (570,8; фото с подъёма см. ниже), Куш-Кая (664,3) - вот список вершин Южного Берега Крыма, покорённых мной. Тогда я и понял, что никакие моря и океаны не займут в моём сердце такое место, какое занимают горы.</p>
+            <p>Своим незакрытым гештальтом я считаю Розу Пик (2320, недалеко от г. Сочи). Я очень хотел взойти туда пешим ходом, но по некоторым обстоятельствам пришлось подниматься на фуникулёрах по канатной дороге. Через несколько лет эта вершина обязательно поддастся моим двоим, и мои глаза снова увидят те завораживающие пейзажи Кавказских гряд, внизу - облака, а впереди - извилистую дорогу к парку водопадов "Менделиха".</p>
+        </section>
+
+        <!-- image moved out from #about section to be placed left from <aside>-block -->
+        <!-- original image is in 1:1 format -->
+        <div class="about-media">
+            <img src="./img/me.jpg"
+                alt="Фотография студента"
+                width="300"
+                height="300">
+
+            <aside>
+                <h2 class="aside-badge">Любимое место</h2>
+
+                <p>Моё любимое место - Южный Берег Крыма. Сочетание Чёрного моря, граничащего с горными массивами, следов греческой культуры и города-героя Севастополя не оставят равнодушными никого.</p>
+            </aside>
+        </div>
+
+        <section id="skills">
+            <h2>Навыки</h2>
+
+            <div class="skills-list">
+                <article class="skill-card">
+                    <h3>Работа с основным оборудованием</h3>
+
+                    <p>Опыт работы с карабинами, страховками и др,, знание техники безопасности при обращении с ними.</p>
+                    <dl><dt>Навык</dt><dd>Туристическое снаряжение</dd><dt>Уровень</dt><dd>60%</dd></dl>
+                    <div class="progress-track" role="progressbar" aria-label="Уровень навыка работы со снаряжением" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><div class="progress-fill" style="width: 60%"></div></div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Вязание узлов на руках</h3>
+
+                    <p>Восьмёрка, австрийский встречный, прямой, встречный, грейпвайн и др.</p>
+                    <dl><dt>Навык</dt><dd>Узлы на руках</dd><dt>Уровень</dt><dd>52%</dd></dl>
+                    <div class="progress-track" role="progressbar" aria-label="Уровень навыка вязания узлов на руках" aria-valuemin="0" aria-valuemax="100" aria-valuenow="52"><div class="progress-fill" style="width: 52%"></div></div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Вязание узлов на опоре</h3>
+
+                    <p>Булинь, удавка, карабинная удавка, штыки и др.</p>
+                    <dl><dt>Навык</dt><dd>Узлы на опоре</dd><dt>Уровень</dt><dd>42%</dd></dl>
+                    <div class="progress-track" role="progressbar" aria-label="Уровень навыка вязания узлов на опоре" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42"><div class="progress-fill" style="width: 42%"></div></div>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Английский язык</h3>
+
+                    <p>Общение и решение бытовых вопросов в поездках.</p>
+                    <dl><dt>Навык</dt><dd>Коммуникация</dd><dt>Уровень</dt><dd>67%</dd></dl>
+                    <div class="progress-track" role="progressbar" aria-label="Уровень знания английского языка" aria-valuemin="0" aria-valuemax="100" aria-valuenow="67"><div class="progress-fill" style="width: 67%"></div></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="visited">
+            <h2>Посещённые вершины</h2>
+
+            <p>В хронологическом порядке:</p>
+            <ol class="projects">
+                <li>Аю-Даг (570,8);</li>
+                <li>Куш-Кая (664,3);</li>
+                <li>Кокшетау a.k.a. Синюха (947);</li>
+                <li>Имантау (621);</li>
+                <li>Роза Пик (2320).</li>
+            </ol>
+        </section>
+
+        <section id="statistics">
+            <h2>Статистика прогресса</h2>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <h3>Страны</h3>
+
+                    <p class="stat-value"><data value="2">2</data></p>
+                    <p>страны посещены</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Города</h3>
+
+                    <p class="stat-value"><data value="13">13</data></p>
+                    <p>городов исследовано</p>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Фото</h3>
+
+                    <p class="stat-value"><data value="69">69</data></p>
+                    <p>кадров в архиве</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="feedback">
+            <h2>Обратная связь</h2>
+
+            <!-- feedback form -->
+            <form>
+                <p> <label for="name">Имя:</label><br>
+                    <input type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Введите ваше имя">
+                </p>
+
+                <p> <label for="email">Email:</label><br>
+                    <input type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Введите ваш email">
+                </p>
+
+                <p> <label for="message">Сообщение:</label><br>
+                    <textarea id="message"
+                        name="message"
+                        placeholder="Введите ваше сообщение"
+                        rows="7"></textarea>
+                </p>
+
+                <!-- fake button - not really sending your feedback anywhere -->
+                <button style="font-size: 16px;">Отправить</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© Данила "akshin_" Аксёнов - 2026</p>
+    </footer>
+
+</body>
+</html>
