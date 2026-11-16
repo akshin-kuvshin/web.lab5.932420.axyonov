@@ -134,11 +134,11 @@ function main() {
         console.error("Элемент не найден: #hide-editable-skills.");
     else {
         addSkillButton.addEventListener("click", () => {
-            const skill = prompt("Введите новый навык:").trim();
-            if (skill === null || skill === "")
+            const skill = prompt("Введите новый навык:");
+            if (skill === null || skill.trim() === "")
                 return;
 
-            skillsList.appendChild(createSkillElement(skill));
+            skillsList.appendChild(createSkillElement(skill, skillsList));
             saveSkills(skillsList);
         });
 
